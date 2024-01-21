@@ -78,6 +78,11 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+::placeholder{
+    font-size: 900;
+    letter-spacing: 1px;
+}
+
 .error{
     color: var(--light-red);
     height: 20px;
