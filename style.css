@@ -50,7 +50,9 @@ body{
     letter-spacing: 5px;
     font-size: 14px;
 }
-.give-date input{
+.day-i,
+.month-i,
+.year-i{
     width: 110px;
     padding: 5px 15px;
     font-size: 32px;
@@ -135,6 +137,12 @@ input[type=number] {
     line-height: 80px;
 }
 
+
+.onError{
+    border: 1px solid var(--light-red);
+}
+
+
 /* Responsive */
 
 @media screen and (max-width:767px) {
@@ -163,5 +171,8 @@ input[type=number] {
     .output{
         font-size: 36px;
         margin-top: 40px;
+    }
+    .error{
+        width: 87px;
     }
 }

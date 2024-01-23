@@ -1,6 +1,6 @@
-let dayInput = document.getElementById('day-i')
-let monthInput = document.getElementById('month-i')
-let yearInput = document.getElementById('year-i')
+let dayInput = document.querySelector('.day-i')
+let monthInput = document.querySelector('.month-i')
+let yearInput = document.querySelector('.year-i')
 let btn = document.querySelector('.btn')
 let error1 = document.querySelector('.error-1')
 let error2 = document.querySelector('.error-2')
@@ -22,34 +22,34 @@ btn.addEventListener('click',()=>{
     let x=0,y=0,z=0;
 
     if(dayInput.value === null || dayInput.value === '' ){
-        dayInput.style.borderColor = 'hsl(0, 100%, 67%)';
+        dayInput.classList.add('onError');
         error1.innerHTML = 'This Field is required';
         label1.style.color = 'hsl(0, 100%, 67%)';
     }
     else{
-        dayInput.style.borderColor = 'hsl(0, 0%, 86%)';
+        dayInput.classList.remove('onError');
         error1.innerHTML = '';
         label1.style.color = 'hsl(0, 1%, 44%)';
         x=1;
     }
     if(monthInput.value === null || monthInput.value === '' ){
-        monthInput.style.borderColor = 'hsl(0, 100%, 67%)';
+        monthInput.classList.add('onError');
         error2.innerHTML = 'This Field is required';
         label2.style.color = 'hsl(0, 100%, 67%)';
     }
     else{
-        monthInput.style.borderColor = 'hsl(0, 0%, 86%)';
+        monthInput.classList.remove('onError');
         error2.innerHTML = '';
         label2.style.color = 'hsl(0, 1%, 44%)';
         y=1;
     }
     if(yearInput.value === null || yearInput.value === '' ){
-        yearInput.style.borderColor = 'hsl(0, 100%, 67%)';
+        yearInput.classList.add('onError');
         error3.innerHTML = 'This Field is required';
         label3.style.color = 'hsl(0, 100%, 67%)';
     }
     else{
-        yearInput.style.borderColor = 'hsl(0, 0%, 86%)';
+        yearInput.classList.remove('onError');
         error3.innerHTML = '';
         label3.style.color = 'hsl(0, 1%, 44%)';
         z=1;
@@ -70,17 +70,17 @@ btn.addEventListener('click',()=>{
         if(correctDate === "NaN/NaN/NaN"){
             check1 = 1;
         if(monthInput.value > 12){
-            monthInput.style.borderColor = 'hsl(0, 100%, 67%)';
+            monthInput.classList.add('onError');
             error2.innerHTML = 'Must be a valid month';
             label2.style.color = 'hsl(0, 100%, 67%)';
         }
         if(dayInput.value > 31){
-            dayInput.style.borderColor = 'hsl(0, 100%, 67%)';
+            dayInput.classList.add('onError');
             error1.innerHTML = 'Must be a valid Date';
             label1.style.color = 'hsl(0, 100%, 67%)';
         }
         if(yearInput.value > todayDate.getFullYear()){
-            yearInput.style.borderColor = 'hsl(0, 100%, 67%)';
+            yearInput.classList.add('onError');
             error3.innerHTML = 'Must be in past';
             label3.style.color = 'hsl(0, 100%, 67%)';
         }
@@ -90,9 +90,9 @@ btn.addEventListener('click',()=>{
     }
 
         if( todayDate < inputDate){
-            dayInput.style.borderColor = 'hsl(0, 100%, 67%)';
-            monthInput.style.borderColor = 'hsl(0, 100%, 67%)';
-            yearInput.style.borderColor = 'hsl(0, 100%, 67%)';
+            dayInput.classList.add('onError');
+            monthInput.classList.add('onError');
+            yearInput.classList.add('onError');
             error3.innerHTML = 'Must be in past';
             label1.style.color = 'hsl(0, 100%, 67%)';
             label2.style.color = 'hsl(0, 100%, 67%)';
@@ -106,12 +106,12 @@ btn.addEventListener('click',()=>{
         if( givenDate !== correctDate){
             check3 = 1;
             if(month <=12){
-            dayInput.style.borderColor = 'hsl(0, 100%, 67%)';
+            dayInput.classList.add('onError');
             error1.innerHTML = 'Must be a valid Date';
             label1.style.color = 'hsl(0, 100%, 67%)';
            }
            if(day<=31){
-            yearInput.style.borderColor = 'hsl(0, 100%, 67%)';
+            yearInput.classList.add('onError');
             error3.innerHTML = 'Must be a valid Year';
             label3.style.color = 'hsl(0, 100%, 67%)';
            }
